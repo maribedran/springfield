@@ -472,6 +472,12 @@
     },
     {
       "files": [
+        "css/cms/themes/lincolnloop.css"
+      ],
+      "name": "lincolnloop"
+    },
+    {
+      "files": [
         "css/cms/themes/enterprise-remove-bgs.css"
       ],
       "name": "enterprise-remove-bgs"

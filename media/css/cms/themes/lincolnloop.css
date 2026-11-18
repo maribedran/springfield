@@ -1,0 +1,282 @@
+/*
+* This Source Code Form is subject to the terms of the Mozilla Public
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at https://mozilla.org/MPL/2.0/.
+*/
+
+/* Required for postcss-custom-media to resolve @custom-media variables in standalone bundles */
+@import 'variables/flare-media-query-tokens.css';
+
+/* Lincoln Loop theme, for the Wagtail Space talk page. Set "lincolnloop" as the page's Body Class. */
+:root {
+    --ll-spray: #75cdd6;
+    --ll-gold-drop: #d36529;
+    --ll-gold-drop-dark: #a9501f;
+    --ll-nero: #292929;
+    --ll-porcelain: #f0f2f2;
+    --ll-dark-teal: #153e42;
+}
+
+@layer page {
+    /* Map Flare's base palette to Lincoln Loop: purples become teals, bright purples become Gold Drop */
+    :root {
+        --token-color-black-4: var(--ll-nero);
+        --token-color-black-4-72: rgba(41, 41, 41, 0.72);
+        --token-color-black-4-90: rgba(41, 41, 41, 0.9);
+        --token-color-dark-purple: var(--ll-dark-teal);
+        --token-color-dark-purple-22: rgba(21, 62, 66, 0.22);
+        --token-color-dark-purple-30: rgba(21, 62, 66, 0.3);
+        --token-color-dark-purple-50: rgba(21, 62, 66, 0.4);
+        --token-color-dark-purple-2: #0f2e31;
+        --token-color-dark-purple-2-40: rgba(15, 46, 49, 0.4);
+        --token-color-dark-purple-3: #0a1f21;
+        --token-color-purple: #1d5a60;
+        --token-color-medium-purple: #24727a;
+        --token-color-link-purple: var(--ll-gold-drop-dark);
+        --token-color-nav-icon-purple: var(--ll-spray);
+        --token-color-light-purple: var(--ll-gold-drop);
+        --token-color-light-purple-20: rgba(211, 101, 41, 0.2);
+        --token-color-light-purple-40: rgba(211, 101, 41, 0.4);
+        --token-color-light-purple-60: rgba(211, 101, 41, 0.6);
+        --token-color-light-purple-80: rgba(211, 101, 41, 0.8);
+        --token-color-soft-purple: var(--ll-porcelain);
+        --token-color-soft-purple-2: #e0eff1;
+        --token-color-soft-purple-3: #c8e8eb;
+        --token-color-soft-purple-4: #b0e0e5;
+        --token-color-soft-purple-5: #93d5dc;
+        --token-color-soft-purple-6: var(--ll-spray);
+        --token-color-soft-purple-40: rgba(240, 242, 242, 0.4);
+        --token-color-soft-purple-64: rgba(240, 242, 242, 0.64);
+        --token-color-soft-magenta: #fbede5;
+        --token-color-soft-magenta-20: rgba(251, 237, 229, 0.2);
+        --token-gradient-privacy: linear-gradient(
+            90deg,
+            var(--ll-spray) 0%,
+            var(--ll-dark-teal) 100%
+        );
+        --token-gradient-purple: radial-gradient(
+            122.66% 137.66% at 50% 0%,
+            #24727a 0%,
+            var(--ll-dark-teal) 100%
+        );
+        --token-gradient-subnav-dark: linear-gradient(
+            0deg,
+            var(--ll-dark-teal) 0%,
+            #1d5a60 100%
+        );
+
+        /* Replaces a purple noise PNG */
+        --token-noise-gradient: linear-gradient(
+            180deg,
+            var(--ll-dark-teal) 0%,
+            #1d5a60 100%
+        );
+        --token-gradient-blurred-bg: radial-gradient(
+            #24727a 0%,
+            var(--ll-dark-teal) 60%
+        );
+    }
+
+    :root,
+    .fl-split-page-upper .fl-force-light-theme,
+    .fl-force-light-theme {
+        /* Stay light when the OS is in dark mode */
+        /* stylelint-disable-next-line no-invalid-position-at-import-rule */
+        @import 'variables/flare-light-theme.css';
+
+        --fl-theme-body-background: var(--token-color-white);
+        --fl-theme-color-text: var(--ll-nero);
+        --fl-theme-color-brand-text: var(--ll-dark-teal);
+        --fl-theme-color-link: var(--ll-dark-teal);
+        --fl-theme-color-link-hover: var(--ll-gold-drop);
+        --fl-theme-color-link-alt-hover: var(--ll-nero);
+        --fl-theme-code-background: var(--ll-porcelain);
+        --fl-theme-color-icon-wrap: var(--ll-dark-teal);
+        --fl-theme-quote-rule-color: var(--ll-gold-drop);
+        --fl-theme-quote-mark-color: var(--ll-gold-drop);
+        --fl-theme-quote-subtle-rule-color: var(--ll-spray);
+        --fl-theme-surface-card-gradient: var(--ll-porcelain);
+        --fl-theme-default-card-bg: var(--ll-porcelain);
+        --fl-theme-pill-bg-color-primary: var(--ll-porcelain);
+        --fl-theme-illustration-icon-bg: var(--ll-porcelain);
+        --fl-card-filled-border-color: var(--ll-spray);
+        --fl-theme-divider-color: var(--ll-spray);
+        --fl-theme-divider: 1px solid var(--fl-theme-divider-color);
+
+        /* Tags */
+        --tag-purple-bg: var(--ll-porcelain);
+        --tag-purple-color: var(--ll-dark-teal);
+        --tag-purple-hover-border-color: var(--ll-dark-teal);
+        --tag-purple-selected-bg: var(--ll-dark-teal);
+        --tag-purple-selected-color: var(--token-color-white);
+
+        /* Notifications: the default one is teal, the orange one is Gold Drop */
+        --notification-bg: var(--ll-porcelain);
+        --notification-color: var(--ll-nero);
+        --notification-border-color: var(--ll-spray);
+        --notification-icon-bg: var(--ll-dark-teal);
+        --notification-icon-color: var(--token-color-white);
+        --notification-stacked-color: var(--ll-dark-teal);
+        --notification-box-shadow: 0 0 24px 2px rgba(117, 205, 214, 0.4);
+        --notification-orange-bg: color-mix(
+            in sRGB,
+            var(--ll-gold-drop) 12%,
+            white
+        );
+        --notification-orange-border-color: var(--ll-gold-drop);
+        --notification-orange-icon-bg: var(--ll-gold-drop);
+    }
+
+    /* Header and upper content: dark teal, like the Lincoln Loop header */
+    .lincolnloop .fl-header {
+        /* Inlined by flare-import-anywhere-loader */
+        /* stylelint-disable-next-line no-invalid-position-at-import-rule */
+        @import 'variables/flare-dark-theme.css';
+
+        --fl-theme-background: var(--ll-dark-teal);
+        --fl-menu-hamburger-bg: var(--ll-gold-drop);
+        --token-color-nav-icon-purple: var(--ll-spray);
+        --fl-menu-separator-color: var(--ll-spray);
+        --fl-menu-panel-border-color: var(--ll-spray);
+        --fl-menu-panel-box-shadow-color: rgba(117, 205, 214, 0.2);
+        --fl-menu-category-link-bg-color: rgba(117, 205, 214, 0.2);
+        --fl-menu-category-link-hover-bg-color: rgba(117, 205, 214, 0.4);
+    }
+
+    .fl-split-page-upper,
+    .fl-force-dark-theme,
+    .lincolnloop .fl-header {
+        --fl-theme-color-text: var(--token-color-white);
+        --fl-theme-color-brand-text: var(--ll-spray);
+        --fl-theme-color-link: var(--ll-spray);
+        --fl-theme-color-link-hover: var(--token-color-white);
+        --fl-theme-color-link-alt-hover: var(--ll-spray);
+        --fl-theme-quote-rule-color: var(--ll-gold-drop);
+        --fl-theme-quote-mark-color: var(--ll-gold-drop);
+        --fl-theme-divider-color: var(--ll-spray);
+        --fl-theme-divider: 1px solid var(--fl-theme-divider-color);
+        --tag-purple-bg: var(--ll-spray);
+        --tag-purple-color: var(--ll-dark-teal);
+        --tag-purple-hover-border-color: var(--token-color-white);
+        --tag-purple-selected-bg: var(--token-color-white);
+        --tag-purple-selected-color: var(--ll-dark-teal);
+        --notification-bg: color-mix(
+            in sRGB,
+            var(--ll-spray) 15%,
+            var(--ll-dark-teal)
+        );
+        --notification-color: var(--token-color-white);
+        --notification-border-color: var(--ll-spray);
+        --notification-icon-bg: var(--ll-spray);
+        --notification-icon-color: var(--ll-dark-teal);
+        --notification-stacked-color: var(--token-color-white);
+    }
+
+    .lincolnloop .fl-header .fl-button.button-ghost {
+        --button-text-color: var(--token-color-white);
+        --button-bg-color-hover: var(--token-color-white);
+        --button-text-color-hover: var(--ll-dark-teal);
+    }
+
+    /* Drop the Firefox purple glow */
+    .lincolnloop .has-gradient-bottom::before {
+        background: none;
+        content: none;
+    }
+
+    .lincolnloop .fl-superheading {
+        color: var(--fl-theme-color-brand-text);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    /* Talk intro (anchor ID talk-intro): image bleeds off the left edge and covers about half the width, like the lincolnloop.com hero */
+    @media (--viewport-md-up) {
+        .lincolnloop .fl-split-page-upper:has(#talk-intro) {
+            padding-block-end: 0;
+        }
+
+        .lincolnloop #talk-intro {
+            max-inline-size: none;
+            min-block-size: 80vh;
+        }
+
+        .lincolnloop #talk-intro .fl-intro-content {
+            grid-column: 2;
+            z-index: 1;
+        }
+
+        .lincolnloop #talk-intro .fl-intro-media {
+            inline-size: 84vw;
+            inset-block-start: 0;
+            inset-inline-start: -24vw;
+            margin: 0;
+            max-inline-size: none;
+            position: absolute;
+        }
+
+        .lincolnloop #talk-intro .image-variants-display {
+            inline-size: 100%;
+        }
+
+        .lincolnloop #talk-intro .fl-intro-media img {
+            border-radius: 0;
+        }
+    }
+
+    .fl-card.fl-card-outline {
+        --card-border-color: var(--ll-spray);
+        background: transparent;
+    }
+
+    /* "Purple Radial Gradient" banners become solid orange */
+    .fl-banner.fl-banner-purple-radial-gradient {
+        --button-bg-color: var(--token-color-white);
+        --button-text-color: var(--ll-nero);
+        --button-bg-color-hover: var(--ll-porcelain);
+        --button-text-color-hover: var(--ll-nero);
+        --button-bg-color-active: var(--ll-porcelain);
+        background: var(--ll-gold-drop);
+    }
+
+    /* Bold labels on Gold Drop buttons and tags */
+    .fl-button,
+    .fl-tag,
+    .fl-card-tag {
+        font-weight: var(--token-font-weight-bold);
+    }
+
+    /* Same button, card and banner radius as lincolnloop.com */
+    .fl-button,
+    .fl-banner,
+    .fl-card.fl-card-outline,
+    .fl-card.fl-card-filled,
+    .fl-two-column-card,
+    .fl-card-gallery-card,
+    .fl-card-gallery-callout-card {
+        --gallery-card-radius: 8px;
+        border-radius: 8px;
+    }
+
+    /* Square edges on the upper and lower content and the Featured Image section */
+    .lincolnloop .fl-main,
+    .lincolnloop .fl-split-page-upper,
+    .lincolnloop .fl-featured-image-section {
+        border-radius: 0;
+    }
+
+    .lincolnloop main img,
+    .lincolnloop main video,
+    .lincolnloop .fl-mediacontent-media {
+        border-radius: 0;
+    }
+
+    .lincolnloop .fl-scallop-decoration {
+        display: none;
+    }
+
+    .lincolnloop .fl-footer {
+        display: none;
+    }
+}

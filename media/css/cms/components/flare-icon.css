@@ -664,6 +664,11 @@
     --icon-src: url('/media/img/firefox/flare/icons/desktop-16/gift/gift-16.svg');
 }
 
+/* GitHub Octicons git-pull-request (MIT, github.com/primer/octicons) */
+.fl-icon-git {
+    --icon-src: url('/media/img/firefox/flare/icons/desktop-16/git/git-16.svg');
+}
+
 .fl-icon-globe {
     --icon-src: url('/media/img/firefox/flare/icons/desktop-16/globe/globe-16.svg');
 }
