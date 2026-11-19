@@ -2097,9 +2097,9 @@ requires-dist = [
     { name = "wagtail", specifier = "==8.1" },
     { name = "wagtail-link-block", specifier = "==1.2" },
     { name = "wagtail-localize", specifier = "==1.14.5" },
-    { name = "wagtail-localize-dashboard", specifier = "==0.6.0" },
+    { name = "wagtail-localize-dashboard", git = "https://github.com/lincolnloop/wagtail-localize-dashboard?rev=0c1bf9be76328a737265e9742a063cfc806c3ee2" },
     { name = "wagtail-localize-intentional-blanks", specifier = "==0.3.0" },
-    { name = "wagtail-localize-smartling", specifier = "==0.13.0" },
+    { name = "wagtail-localize-smartling", git = "https://github.com/mozilla/wagtail-localize-smartling?rev=e7fd8c92c9d55825d3226ad3cc665ba04937f6a0" },
     { name = "wagtail-thumbnail-choice-block", specifier = "==0.3.0" },
     { name = "wagtaildraftsharing", specifier = "==0.3.0" },
     { name = "wand", specifier = "==0.7.2" },
@@ -2406,15 +2406,11 @@ wheels = [
 [[package]]
 name = "wagtail-localize-dashboard"
 version = "0.6.0"
-source = { registry = "https://pypi.org/simple" }
+source = { git = "https://github.com/lincolnloop/wagtail-localize-dashboard?rev=0c1bf9be76328a737265e9742a063cfc806c3ee2#0c1bf9be76328a737265e9742a063cfc806c3ee2" }
 dependencies = [
     { name = "django" },
     { name = "wagtail" },
     { name = "wagtail-localize" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/cd/38/0042b1bab831105d4d99ea1f86325c9566554b522adbd32ae9893f129445/wagtail_localize_dashboard-0.6.0.tar.gz", hash = "sha256:febc10f3d8585189123d872564be4dac6b21e60cc0959f4ae3feeb8994d96def", size = 89263, upload-time = "2026-10-29T14:45:18.213Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/bd/25/0ab319ee9183f1586e86a89c156a6bccf63e4e5606b48c46230109e2a131/wagtail_localize_dashboard-0.6.0-py3-none-any.whl", hash = "sha256:5758f7178d544fdc9c0346cdead2bb31719bd4845f977f0dac7ffd4d1de74162", size = 54618, upload-time = "2026-10-29T14:45:16.568Z" },
 ]
 
 [[package]]
@@ -2434,17 +2430,13 @@ wheels = [
 [[package]]
 name = "wagtail-localize-smartling"
 version = "0.13.0"
-source = { registry = "https://pypi.org/simple" }
+source = { git = "https://github.com/mozilla/wagtail-localize-smartling?rev=e7fd8c92c9d55825d3226ad3cc665ba04937f6a0#e7fd8c92c9d55825d3226ad3cc665ba04937f6a0" }
 dependencies = [
     { name = "django" },
     { name = "djangorestframework" },
     { name = "requests" },
     { name = "wagtail" },
     { name = "wagtail-localize" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/6d/89/7f973fdbcf3e3c5daf3e700750dbab6f02d60286708a44de31edce3269cc/wagtail_localize_smartling-0.13.0.tar.gz", hash = "sha256:e9104ccb6865995f61dff3a7464957c17804dc3d28864f695089c1a41cac33b2", size = 58442, upload-time = "2026-08-03T12:09:49.886Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/84/74/a5d6b08c750f576508a8a1fdc82ee5d2f6c7a8e8defd865c9b020a5304a5/wagtail_localize_smartling-0.13.0-py3-none-any.whl", hash = "sha256:2c27aac4a8a807ec3868d98957c564ef6541637944d20a46dfc5d8f18058700d", size = 71275, upload-time = "2026-08-03T12:09:48.482Z" },
 ]
 
 [[package]]

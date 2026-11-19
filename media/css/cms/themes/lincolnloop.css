@@ -272,8 +272,18 @@
         border-radius: 0;
     }
 
+    /* Without the scallop, a Featured Image section needs its own gap from the block above */
+    .lincolnloop .fl-split-page-lower .fl-featured-image-section {
+        margin-block-start: var(--fl-section-v-padding);
+    }
+
     .lincolnloop .fl-scallop-decoration {
         display: none;
+    }
+
+    /* Read by flare-sliding-carousel.es6.js; Flare's default is 24s per slide */
+    .lincolnloop .fl-sliding-carousel {
+        --fl-slide-autoplay-interval: 8000ms;
     }
 
     .lincolnloop .fl-footer {

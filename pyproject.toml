@@ -52,9 +52,11 @@ dependencies = [
     "supervisor==4.3.0",
     "timeago==1.0.16",
     "wagtail-link-block==1.2",
-    "wagtail-localize-dashboard==0.6.0",
+    # main after lincolnloop/wagtail-localize-dashboard#18; switch back to a release once one includes it
+    "wagtail-localize-dashboard @ git+https://github.com/lincolnloop/wagtail-localize-dashboard@0c1bf9be76328a737265e9742a063cfc806c3ee2",
     "wagtail-localize-intentional-blanks==0.3.0",
-    "wagtail-localize-smartling==0.13.0",
+    # Head of the open mozilla/wagtail-localize-smartling#80-#90 PR stack (#90); switch back to a release once they're merged
+    "wagtail-localize-smartling @ git+https://github.com/mozilla/wagtail-localize-smartling@e7fd8c92c9d55825d3226ad3cc665ba04937f6a0",
     "wagtail-localize==1.14.5",
     "wagtail-thumbnail-choice-block==0.3.0",
     "Wagtail==8.1",

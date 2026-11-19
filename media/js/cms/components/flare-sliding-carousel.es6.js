@@ -44,6 +44,13 @@ class SlidingCarousel {
         this.userPaused = false;
         this.controlsSwiper = null;
         this.slideStartTime = 0;
+        // Themes can shorten the time on slides without video, e.g. --fl-slide-autoplay-interval: 8000ms
+        this.autoPlayIntervalMs =
+            parseFloat(
+                getComputedStyle(rootEl).getPropertyValue(
+                    '--fl-slide-autoplay-interval'
+                )
+            ) || AUTO_PLAY_INTERVAL_MS;
 
         // Preload all videos so they start quickly on slide change
         this.slides.forEach((slide) => {
@@ -176,7 +183,7 @@ class SlidingCarousel {
                 maxMs = Math.max(maxMs, videoEl.duration * 1000);
             }
         }
-        return maxMs > 0 ? maxMs : AUTO_PLAY_INTERVAL_MS;
+        return maxMs > 0 ? maxMs : this.autoPlayIntervalMs;
     }
 
     scheduleNextSlide(delayMs) {
