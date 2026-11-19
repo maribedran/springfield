@@ -7,7 +7,7 @@ FROM ghcr.io/astral-sh/uv:0.13.4 AS uv
 ########
 # Python dependencies builder
 #
-FROM python:3.13-slim-bookworm AS python-builder
+FROM python:3.15-slim-bookworm AS python-builder
 
 WORKDIR /app
 ENV LANG=C.UTF-8
@@ -37,7 +37,7 @@ RUN uv sync --locked --no-dev
 # Kept separate from `python-builder`, whose `uv sync --locked` fails while
 # `pyproject.toml` and `uv.lock` disagree, which is exactly when this is needed
 #
-FROM python:3.13-slim-bookworm AS uv-lock
+FROM python:3.15-slim-bookworm AS uv-lock
 
 WORKDIR /app
 ENV UV_PYTHON=3.13
@@ -80,7 +80,7 @@ RUN npm run build --verbose
 ########
 # django app container
 #
-FROM python:3.13-slim-bookworm AS app-base
+FROM python:3.15-slim-bookworm AS app-base
 
 # Extra python env
 ENV PYTHONDONTWRITEBYTECODE=1
