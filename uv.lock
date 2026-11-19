@@ -1087,14 +1087,14 @@ wheels = [
 
 [[package]]
 name = "markdown-it-py"
-version = "4.2.0"
+version = "4.3.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "mdurl" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz", hash = "sha256:04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49", size = 82454, upload-time = "2026-05-07T12:08:28.36Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/16/fc/cee2c45553c9a9bf77d8b0c391560c556d7ed756b1f0bb35eb5d48db09ea/markdown_it_py-4.3.0.tar.gz", hash = "sha256:91a58fa5b72c71a40cf7177250fd767480d7a2bb3ac426ccfb76fb90305fdaaa", size = 242701, upload-time = "2026-11-10T16:18:30.467Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl", hash = "sha256:9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a", size = 91687, upload-time = "2026-05-07T12:08:27.182Z" },
+    { url = "https://files.pythonhosted.org/packages/c9/31/5f0ac2f1a1c67423c995c731a11cd4ad05d081a2be969d74f868bdb9cc70/markdown_it_py-4.3.0-py3-none-any.whl", hash = "sha256:7aa1511a46c39138de78d9eba92ce47e63124d8003fc98b3a351909e04239efa", size = 96951, upload-time = "2026-11-10T16:18:28.975Z" },
 ]
 
 [[package]]
@@ -1608,14 +1608,14 @@ wheels = [
 
 [[package]]
 name = "pytest-datadir"
-version = "1.8.0"
+version = "1.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pytest" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b4/46/db060b291999ca048edd06d6fa9ee95945d088edc38b1172c59eeb46ec45/pytest_datadir-1.8.0.tar.gz", hash = "sha256:7a15faed76cebe87cc91941dd1920a9a38eba56a09c11e9ddf1434d28a0f78eb", size = 11848, upload-time = "2025-07-30T13:52:12.518Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/b6/8b/0f3460b1223d3053d355347445bc6d1a85cdc50f1fe80b17bb2b25b2e854/pytest_datadir-1.9.0.tar.gz", hash = "sha256:1e81f37069571fe283b58d8c14386898b62e54543654b6b5335d74313c16b1af", size = 13081, upload-time = "2026-11-03T14:28:15.899Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8f/7a/33895863aec26ac3bb5068a73583f935680d6ab6af2a9567d409430c3ee1/pytest_datadir-1.8.0-py3-none-any.whl", hash = "sha256:5c677bc097d907ac71ca418109adc3abe34cf0bddfe6cf78aecfbabd96a15cf0", size = 6512, upload-time = "2025-07-30T13:52:11.525Z" },
+    { url = "https://files.pythonhosted.org/packages/35/5d/042a244ff485e2956e1bd548eb9a8ee186a1a9fd4dfc44a3683b62f1bf01/pytest_datadir-1.9.0-py3-none-any.whl", hash = "sha256:e8b071cc486deee3cc5d8fc24c41735396d1ced2e75bbb85d15b6e67b8b41acb", size = 6463, upload-time = "2026-11-03T14:28:14.747Z" },
 ]
 
 [[package]]
@@ -2120,7 +2120,7 @@ dev = [
     { name = "pyquery", specifier = "==2.1.0" },
     { name = "pytest", specifier = "==9.2.0" },
     { name = "pytest-cov", specifier = "==7.1.0" },
-    { name = "pytest-datadir", specifier = "==1.8.0" },
+    { name = "pytest-datadir", specifier = "==1.9.0" },
     { name = "pytest-django", specifier = "==4.14.0" },
     { name = "pytest-mock", specifier = "==3.17.0" },
     { name = "pytest-rerunfailures", specifier = "==16.7" },
@@ -2129,7 +2129,7 @@ dev = [
     { name = "responses", specifier = "==0.26.3" },
     { name = "ruff", specifier = "==0.17.3" },
     { name = "selenium", specifier = "==4.51.0" },
-    { name = "translate-toolkit", specifier = "==3.20.2" },
+    { name = "translate-toolkit", specifier = "==3.20.6" },
     { name = "wagtail-factories", specifier = "==4.5.0" },
 ]
 
@@ -2197,15 +2197,15 @@ wheels = [
 
 [[package]]
 name = "translate-toolkit"
-version = "3.20.2"
+version = "3.20.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "lxml" },
     { name = "unicode-segmentation-rs" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7b/36/618e11497e18b74a8f2807594d17711ebe9a674aacf7c19624f17c8f3709/translate_toolkit-3.20.2.tar.gz", hash = "sha256:786ed210b262b0a94388f3bc824fa5b586b141d99cdd7db293e02c44ba146e7a", size = 646823, upload-time = "2026-11-01T13:03:04.157Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e7/ec/c4572b49fdb9246f0610b6efcc6169d331f650dfdf2670e1a96c756c468c/translate_toolkit-3.20.6.tar.gz", hash = "sha256:232a2043c438a390fb911eb6b4124e01a983fa8f193e58c422e72cd34bac6a05", size = 655934, upload-time = "2026-11-10T12:49:51.617Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c1/7b/71c67852517c593a6b220633a811c6d37de71483bb732225fcea3c692a36/translate_toolkit-3.20.2-py3-none-any.whl", hash = "sha256:162242febb61fd1bf59c818617fc839598c873ba119f7852a56d271378d2aa50", size = 871515, upload-time = "2026-11-01T13:03:02.201Z" },
+    { url = "https://files.pythonhosted.org/packages/5d/69/e3c2c729dc5513931e7ddda382d4b3a60d297e44427be0018e67772b0ba6/translate_toolkit-3.20.6-py3-none-any.whl", hash = "sha256:f67aa96dc90f274f4715bfe9f72610db7ee39469c5743105148ff7b545fa3f92", size = 880877, upload-time = "2026-11-10T12:49:49.75Z" },
 ]
 
 [[package]]
