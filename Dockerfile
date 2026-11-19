@@ -50,7 +50,7 @@ COPY --from=uv /uv /usr/local/bin/
 ########
 # assets builder and dev server
 #
-FROM node:24-slim AS assets
+FROM node:26-slim AS assets
 
 ENV PATH=/app/node_modules/.bin:$PATH
 WORKDIR /app
