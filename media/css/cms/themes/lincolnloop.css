@@ -7,18 +7,35 @@
 /* Required for postcss-custom-media to resolve @custom-media variables in standalone bundles */
 @import 'variables/flare-media-query-tokens.css';
 
-/* Lincoln Loop theme, for the Wagtail Space talk page. Set "lincolnloop" as the page's Body Class. */
+/* Lincoln Loop theme, for the Wagtail Space talk page. Set "lincolnloop" as the page's Body Class.
+   Values come from the Lincoln Loop design spec (lincolnloop/design-md-spec, DESIGN.md), official palette.
+   Ramp steps aren't spec tokens, so each one names its step. */
+
+/* Commercial Typotheque faces licensed to Lincoln Loop. Not committed: copy them from design-md-spec/fonts/ into media/fonts/lincolnloop/ */
+@font-face { font-family: November; src: url('/media/fonts/lincolnloop/NovemberL-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: November; src: url('/media/fonts/lincolnloop/NovemberL-LightItalic.woff2') format('woff2'); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: November; src: url('/media/fonts/lincolnloop/NovemberL-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: November; src: url('/media/fonts/lincolnloop/NovemberL-RegularItalic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: November; src: url('/media/fonts/lincolnloop/NovemberL-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: November; src: url('/media/fonts/lincolnloop/NovemberL-BoldItalic.woff2') format('woff2'); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: October; src: url('/media/fonts/lincolnloop/OctoberL-Medium.woff2') format('woff2'); font-weight: 550; font-style: normal; font-display: swap; }
+@font-face { font-family: October; src: url('/media/fonts/lincolnloop/OctoberL-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: October; src: url('/media/fonts/lincolnloop/OctoberL-Black.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: swap; }
+
 :root {
-    --ll-spray: #75cdd6;
-    --ll-gold-drop: #d36529;
-    --ll-gold-drop-dark: #a9501f;
+    --ll-spray: #76ccd6;
+    --ll-gold-drop: #d16429;
+    --ll-gold-drop-dark: #a94723; /* Gold Drop 700: Gold Drop for body-size text, 5.81:1 on white */
     --ll-nero: #292929;
     --ll-porcelain: #f0f2f2;
-    --ll-dark-teal: #153e42;
+    --ll-dark-teal: #153e42; /* Sea Green */
+    --ll-text-muted-dark: #a5a7a7;
+    --ll-shadow-card: 2px 2px 6px rgba(13, 13, 13, 0.06);
+    --ll-shadow-card-hover: 2px 2px 16px rgba(13, 13, 13, 0.16);
 }
 
 @layer page {
-    /* Map Flare's base palette to Lincoln Loop: purples become teals, bright purples become Gold Drop */
+    /* Map Flare's base palette to Lincoln Loop: purples become Sea Green and Spray steps, bright purples become Gold Drop */
     :root {
         --token-color-black-4: var(--ll-nero);
         --token-color-black-4-72: rgba(41, 41, 41, 0.72);
@@ -27,28 +44,28 @@
         --token-color-dark-purple-22: rgba(21, 62, 66, 0.22);
         --token-color-dark-purple-30: rgba(21, 62, 66, 0.3);
         --token-color-dark-purple-50: rgba(21, 62, 66, 0.4);
-        --token-color-dark-purple-2: #0f2e31;
-        --token-color-dark-purple-2-40: rgba(15, 46, 49, 0.4);
-        --token-color-dark-purple-3: #0a1f21;
-        --token-color-purple: #1d5a60;
-        --token-color-medium-purple: #24727a;
+        --token-color-dark-purple-2: #07262c; /* Sea Green 950 */
+        --token-color-dark-purple-2-40: rgba(7, 38, 44, 0.4);
+        --token-color-dark-purple-3: #07262c; /* Sea Green 950 */
+        --token-color-purple: #295a61; /* Spray 800 */
+        --token-color-medium-purple: #296c75; /* Spray 700 */
         --token-color-link-purple: var(--ll-gold-drop-dark);
         --token-color-nav-icon-purple: var(--ll-spray);
         --token-color-light-purple: var(--ll-gold-drop);
-        --token-color-light-purple-20: rgba(211, 101, 41, 0.2);
-        --token-color-light-purple-40: rgba(211, 101, 41, 0.4);
-        --token-color-light-purple-60: rgba(211, 101, 41, 0.6);
-        --token-color-light-purple-80: rgba(211, 101, 41, 0.8);
+        --token-color-light-purple-20: rgba(209, 100, 41, 0.2);
+        --token-color-light-purple-40: rgba(209, 100, 41, 0.4);
+        --token-color-light-purple-60: rgba(209, 100, 41, 0.6);
+        --token-color-light-purple-80: rgba(209, 100, 41, 0.8);
         --token-color-soft-purple: var(--ll-porcelain);
-        --token-color-soft-purple-2: #e0eff1;
-        --token-color-soft-purple-3: #c8e8eb;
-        --token-color-soft-purple-4: #b0e0e5;
-        --token-color-soft-purple-5: #93d5dc;
+        --token-color-soft-purple-2: #eff9fb; /* Spray 50 */
+        --token-color-soft-purple-3: #d7f2f4; /* Spray 100 */
+        --token-color-soft-purple-4: #b8e5ea; /* Spray 200 */
+        --token-color-soft-purple-5: var(--ll-spray);
         --token-color-soft-purple-6: var(--ll-spray);
         --token-color-soft-purple-40: rgba(240, 242, 242, 0.4);
         --token-color-soft-purple-64: rgba(240, 242, 242, 0.64);
-        --token-color-soft-magenta: #fbede5;
-        --token-color-soft-magenta-20: rgba(251, 237, 229, 0.2);
+        --token-color-soft-magenta: #faf2db; /* Gold Drop 100 */
+        --token-color-soft-magenta-20: rgba(250, 242, 219, 0.2);
         --token-gradient-privacy: linear-gradient(
             90deg,
             var(--ll-spray) 0%,
@@ -56,25 +73,33 @@
         );
         --token-gradient-purple: radial-gradient(
             122.66% 137.66% at 50% 0%,
-            #24727a 0%,
+            #296c75 0%,
             var(--ll-dark-teal) 100%
         );
         --token-gradient-subnav-dark: linear-gradient(
             0deg,
             var(--ll-dark-teal) 0%,
-            #1d5a60 100%
+            #295a61 100%
         );
 
         /* Replaces a purple noise PNG */
         --token-noise-gradient: linear-gradient(
             180deg,
             var(--ll-dark-teal) 0%,
-            #1d5a60 100%
+            #295a61 100%
         );
         --token-gradient-blurred-bg: radial-gradient(
-            #24727a 0%,
+            #296c75 0%,
             var(--ll-dark-teal) 60%
         );
+
+        /* Type: October for headings, November for text */
+        --fl-theme-font-family-headline: 'October', ui-sans-serif, system-ui, sans-serif;
+        --fl-theme-font-weight-headline: 550;
+        --fl-theme-font-family-body: 'November', ui-sans-serif, system-ui, sans-serif;
+        --fl-theme-font-weight-body: 300;
+        --token-font-family-mozilla-headline: var(--fl-theme-font-family-headline);
+        --token-font-family-mozilla-text: var(--fl-theme-font-family-body);
     }
 
     :root,
@@ -88,7 +113,9 @@
         --fl-theme-color-text: var(--ll-nero);
         --fl-theme-color-brand-text: var(--ll-dark-teal);
         --fl-theme-color-link: var(--ll-dark-teal);
-        --fl-theme-color-link-hover: var(--ll-gold-drop);
+
+        /* Gold Drop itself is 3.77:1 on white, large text only */
+        --fl-theme-color-link-hover: var(--ll-gold-drop-dark);
         --fl-theme-color-link-alt-hover: var(--ll-nero);
         --fl-theme-code-background: var(--ll-porcelain);
         --fl-theme-color-icon-wrap: var(--ll-dark-teal);
@@ -117,12 +144,8 @@
         --notification-icon-bg: var(--ll-dark-teal);
         --notification-icon-color: var(--token-color-white);
         --notification-stacked-color: var(--ll-dark-teal);
-        --notification-box-shadow: 0 0 24px 2px rgba(117, 205, 214, 0.4);
-        --notification-orange-bg: color-mix(
-            in sRGB,
-            var(--ll-gold-drop) 12%,
-            white
-        );
+        --notification-box-shadow: var(--ll-shadow-card);
+        --notification-orange-bg: #fdf9ed; /* Gold Drop 50 */
         --notification-orange-border-color: var(--ll-gold-drop);
         --notification-orange-icon-bg: var(--ll-gold-drop);
     }
@@ -138,9 +161,9 @@
         --token-color-nav-icon-purple: var(--ll-spray);
         --fl-menu-separator-color: var(--ll-spray);
         --fl-menu-panel-border-color: var(--ll-spray);
-        --fl-menu-panel-box-shadow-color: rgba(117, 205, 214, 0.2);
-        --fl-menu-category-link-bg-color: rgba(117, 205, 214, 0.2);
-        --fl-menu-category-link-hover-bg-color: rgba(117, 205, 214, 0.4);
+        --fl-menu-panel-box-shadow-color: rgba(13, 13, 13, 0.16); /* the brand's hover shadow colour */
+        --fl-menu-category-link-bg-color: #274d54; /* Spray 900 */
+        --fl-menu-category-link-hover-bg-color: #295a61; /* Spray 800 */
     }
 
     .fl-split-page-upper,
@@ -160,16 +183,18 @@
         --tag-purple-hover-border-color: var(--token-color-white);
         --tag-purple-selected-bg: var(--token-color-white);
         --tag-purple-selected-color: var(--ll-dark-teal);
-        --notification-bg: color-mix(
-            in sRGB,
-            var(--ll-spray) 15%,
-            var(--ll-dark-teal)
-        );
+        --notification-bg: #274d54; /* Spray 900 */
         --notification-color: var(--token-color-white);
         --notification-border-color: var(--ll-spray);
         --notification-icon-bg: var(--ll-spray);
         --notification-icon-color: var(--ll-dark-teal);
         --notification-stacked-color: var(--token-color-white);
+    }
+
+    /* The header scrolls away with the page */
+    .lincolnloop .fl-header.enable-sticky {
+        box-shadow: none;
+        position: static;
     }
 
     .lincolnloop .fl-header .fl-button.button-ghost {
@@ -184,11 +209,60 @@
         content: none;
     }
 
+    /* Eyebrows: Accent ramp, October 700 in forced small caps. Size chosen from the ramp: S (18px) */
     .lincolnloop .fl-superheading {
         color: var(--fl-theme-color-brand-text);
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        font-family: var(--fl-theme-font-family-headline);
+        font-feature-settings: 'smcp' 1, 'c2sc' 1;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    /* Type sizes from the screen ramps. Body text is one step larger than Flare's so it reads from the back of the room.
+       Headings: Headline ramp (October 550), with the largest size as Display Accent hero type (October 700, forced small caps) */
+    .lincolnloop {
+        --fl-theme-font-size-body-sm: 18px; /* Paragraph M */
+        --fl-theme-font-size-body-xs: 16px; /* Paragraph S */
+        --fl-theme-font-size-body-2xs: 14px; /* Paragraph XS */
+        --fl-theme-font-size-heading-lg: 32px; /* Headline 2 */
+        --fl-theme-font-size-heading-md: 24px; /* Headline 3 */
+        --fl-theme-font-size-heading-sm: 20px; /* Headline 4 */
+        --fl-theme-font-size-heading-xs: 18px; /* Headline 5 */
+        --fl-theme-font-size-heading-2xs: 16px; /* Headline 6 */
+        --ll-display-size: 48px; /* Display Accent XXS */
+        font-size: 18px; /* Paragraph M */
+        line-height: 1.7;
+    }
+
+    @media (--viewport-md-up) {
+        .lincolnloop {
+            --fl-theme-font-size-body-sm: 20px; /* Paragraph L */
+            --fl-theme-font-size-body-xs: 18px; /* Paragraph M */
+            --fl-theme-font-size-heading-lg: 40px; /* Headline 1 */
+            --fl-theme-font-size-heading-md: 32px; /* Headline 2 */
+            --fl-theme-font-size-heading-sm: 24px; /* Headline 3 */
+            --fl-theme-font-size-heading-xs: 20px; /* Headline 4 */
+            --fl-theme-font-size-heading-2xs: 18px; /* Headline 5 */
+            --ll-display-size: 72px; /* Display Accent M */
+            font-size: 20px; /* Paragraph L */
+        }
+    }
+
+    .lincolnloop .fl-heading,
+    .lincolnloop .fl-banner-heading {
+        font-family: var(--fl-theme-font-family-headline);
+        font-weight: 550;
+        line-height: 1.35;
+    }
+
+    /* Hero titles: page titles and the large condensed headings */
+    .lincolnloop .fl-heading-size-1,
+    .lincolnloop .fl-heading-lg.fl-heading-condensed {
+        font-feature-settings: 'smcp' 1, 'c2sc' 1;
+        font-size: var(--ll-display-size);
+        font-weight: 700;
+        line-height: 1;
     }
 
     /* Talk intro (anchor ID talk-intro): image bleeds off the left edge and covers about half the width, like the lincolnloop.com hero */
@@ -225,6 +299,17 @@
         }
     }
 
+    /* Pills take the field radius, like the spec's badges */
+    .fl-tag,
+    .fl-card-tag {
+        border-radius: 0.25rem;
+    }
+
+    /* White on Gold Drop is large text only; the tag's small label needs Gold Drop 700 (5.81:1) */
+    .lincolnloop .fl-card-tag {
+        --tag-purple-bg: var(--ll-gold-drop-dark);
+    }
+
     .fl-card.fl-card-outline {
         --card-border-color: var(--ll-spray);
         background: transparent;
@@ -238,6 +323,13 @@
         --button-text-color-hover: var(--ll-nero);
         --button-bg-color-active: var(--ll-porcelain);
         background: var(--ll-gold-drop);
+    }
+
+    /* White on Gold Drop is 3.77:1, so everything on this banner is set large: Paragraph XXL */
+    .fl-banner.fl-banner-purple-radial-gradient .fl-body,
+    .fl-banner.fl-banner-purple-radial-gradient p {
+        font-size: 26px;
+        line-height: 1.6;
     }
 
     /* Bold labels on Gold Drop buttons and tags */
@@ -284,6 +376,26 @@
     /* Read by flare-sliding-carousel.es6.js; Flare's default is 24s per slide */
     .lincolnloop .fl-sliding-carousel {
         --fl-slide-autoplay-interval: 8000ms;
+    }
+
+    /* Square slides, so images of different heights don't shift the content around them */
+    .lincolnloop .fl-sliding-carousel-media-panel {
+        align-self: center;
+        aspect-ratio: auto;
+    }
+
+    .lincolnloop .fl-sliding-carousel-slide,
+    .lincolnloop .fl-sliding-carousel-slide.is-active {
+        aspect-ratio: 1 / 1;
+        block-size: auto;
+    }
+
+    .lincolnloop .fl-sliding-carousel-slide .image-variants-display,
+    .lincolnloop .fl-sliding-carousel-slide img {
+        block-size: 100%;
+        inline-size: 100%;
+        object-fit: contain;
+        object-position: top;
     }
 
     .lincolnloop .fl-footer {
